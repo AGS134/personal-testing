@@ -1,40 +1,40 @@
-.chatMsg .message img { max-height: 40vh; }
-
-
-.message.greentext { color: #00ff00;
-text-shadow: 0 0 5px rgba(0,
-255, 0, 0.6);
-padding: 1px;
+.chatMsg .message img {
+    max-height: 40vh;
 }
-.replyAt {
-color: #4fd1c5;
-text-shadow: 0 0 8px rgba(79,
-209, 197, 0.6);
-padding: 1px;
 
+.message.greentext {
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+    padding: 1px;
+}
+
+.replyAt {
+    color: #4fd1c5;
+    text-shadow: 0 0 8px rgba(79, 209, 197, 0.6);
+    padding: 1px;
 }
 
 .chatMsg .name {
     font-size: 16px;
     font-weight: bold;
     display: inline-block;
-    background: linear-gradient(270deg, 
-      red, orange, yellow, green, blue, indigo, violet, red);
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbowShift 5s linear infinite, wave 1s ease-in-out infinite;
-  }
-  
-  @keyframes rainbowShift {
+}
+
+@keyframes rainbowShift {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
-  }
-  
-  @keyframes wave {
+}
+
+@keyframes wave {
     0%, 100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
+}
