@@ -47,24 +47,32 @@
     animation: rainbowShift 5s linear infinite, wave 1s ease-in-out infinite;
 }
 
-/* --- 5. Keyframe Definitions for animated text --- */
+/* --- 5. Keyframe Definitions (All Prefixed) --- */
 
-/* Defines the animation for the horizontal rainbow shift */
-@keyframes rainbowShift {
-    /* Start: Gradient positioned at the left (0%) */
+/* Color Shift Keyframes */
+@-webkit-keyframes rainbowShift {
     0% { background-position: 0% 50%; }
-    /* End: Gradient positioned at the right (100%), creating the scroll effect */
+    100% { background-position: 100% 50%; }
+}
+@-moz-keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
-/* Defines the animation for the vertical bobbing/waving motion */
+/* Wave Keyframes */
+@-webkit-keyframes wave {
+    0%, 100% { -webkit-transform: translateY(0); transform: translateY(0); }
+    50% { -webkit-transform: translateY(-5px); transform: translateY(-5px); }
+}
+@-moz-keyframes wave {
+    0%, 100% { -moz-transform: translateY(0); transform: translateY(0); }
+    50% { -moz-transform: translateY(-5px); transform: translateY(-5px); }
+}
 @keyframes wave {
-    /* Start and End: Normal position (no vertical movement) */
-    0%, 100% {
-        transform: translateY(0);
-    }
-    /* Midpoint: Moves the element up 5 pixels */
-    50% {
-        transform: translateY(-5px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
