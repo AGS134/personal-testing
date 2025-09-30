@@ -1,40 +1,47 @@
+/* --- 1. Image Sizing --- */
 .chatMsg .message img {
+    /* Limits the maximum height of images to 40% of the viewport height (vh) */
     max-height: 40vh;
 }
 
+/* --- 2. "Greentext" Message Styling --- */
 .message.greentext {
+    /* Sets the text color to pure green */
     color: #00ff00;
+    /* Creates a subtle green glow/shadow around the text */
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+    /* Adds minimal padding around the text */
     padding: 1px;
 }
 
+/* --- 3. Reply Reference Styling --- */
 .replyAt {
+    /* Sets the text color to teal/cyan */
     color: #4fd1c5;
+    /* Creates a more prominent teal glow/shadow */
     text-shadow: 0 0 8px rgba(79, 209, 197, 0.6);
+    /* Adds minimal padding around the text */
     padding: 1px;
 }
 
-.chatMsg .name {
+
+/*
+  Targets the <span> containing "anon" ONLY if its parent (.user) 
+  does NOT contain a link (<a>), and applies the full rainbow animation style.
+*/
+.user:not(:has(> a)) > span {
     font-size: 16px;
     font-weight: bold;
     display: inline-block;
+    
+    /* Replicate the rainbow background and size */
     background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
     background-size: 400% 400%;
+    
+    /* Replicate the text clipping and transparency for the effect */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    /* Replicate the animation calls */
     animation: rainbowShift 5s linear infinite, wave 1s ease-in-out infinite;
-}
-
-@keyframes rainbowShift {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-@keyframes wave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
 }
