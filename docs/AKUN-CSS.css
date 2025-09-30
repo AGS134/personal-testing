@@ -11,4 +11,30 @@ color: #4fd1c5;
 text-shadow: 0 0 8px rgba(79,
 209, 197, 0.6);
 padding: 1px;
+
 }
+
+.chatMsg .name {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    background: linear-gradient(270deg, 
+      red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowShift 5s linear infinite, wave 1s ease-in-out infinite;
+  }
+  
+  @keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
