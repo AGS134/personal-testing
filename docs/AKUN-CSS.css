@@ -24,9 +24,30 @@
     padding: 1px;
 }
 
+/* --- 5. Keyframe Definitions for animated text --- */
+
+/* Defines the animation for the horizontal rainbow shift */
+@keyframes rainbowShift {
+    /* Start: Gradient positioned at the left (0%) */
+    0% { background-position: 0% 50%; }
+    /* End: Gradient positioned at the right (100%), creating the scroll effect */
+    100% { background-position: 100% 50%; }
+}
+
+/* Defines the animation for the vertical bobbing/waving motion */
+@keyframes wave {
+    /* Start and End: Normal position (no vertical movement) */
+    0%, 100% {
+        transform: translateY(0);
+    }
+    /* Midpoint: Moves the element up 5 pixels */
+    50% {
+        transform: translateY(-5px);
+    }
+}
 
 /*
-  Targets the <span> containing "anon" ONLY if its parent (.user) 
+  Targets the <span> containing "anon" ONLY if its parent (.user) [AKA TARGET THEM ANON'S ONLY]
   does NOT contain a link (<a>), and applies the full rainbow animation style.
 */
 .user:not(:has(> a)) > span {
@@ -45,3 +66,4 @@
     /* Replicate the animation calls */
     animation: rainbowShift 5s linear infinite, wave 1s ease-in-out infinite;
 }
+
